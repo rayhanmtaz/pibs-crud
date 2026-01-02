@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "db_roti_nusantara"; // Gunakan database utama proyekmu
+$db   = "db_roti_nusantara";
 
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 

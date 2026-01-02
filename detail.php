@@ -113,7 +113,7 @@ if(isset($_POST['proses_absen'])){
             <a href="index.php" style="display:inline-block; margin-bottom:20px; color:#D84315; font-weight:bold;">← Kembali ke Beranda</a>
             
             <?php 
-            $img = (!empty($d['gambar']) && file_exists("images/".$d['gambar'])) ? "images/".$d['gambar'] : "images/mesin_absen.png";
+            $img = (!empty($d['gambar']) && file_exists("images/".$d['gambar'])) ? "images/".$d['gambar'] : "images/logo roti1.jpg";
             ?>
             <img src="<?php echo $img; ?>" style="width:100%; border-radius:8px; margin-bottom:20px;">
             
