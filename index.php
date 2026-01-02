@@ -137,7 +137,7 @@ $kat_id = isset($_GET['kategori']) ? $_GET['kategori'] : '';
                     <?php 
                     $sql = mysqli_query($koneksi, "SELECT * FROM tbl_produk");
                     while($p = mysqli_fetch_array($sql)){
-                        $img = (!empty($p['gambar']) && file_exists("images/".$p['gambar'])) ? "images/".$p['gambar'] : "images/logo roti1.jpg";
+                        $img = (!empty($p['gambar']) && file_exists("images/".$p['gambar'])) ? "images/".$p['gambar'] : "images/roti1.jpg";
                     ?>
                     <div class="card" style="text-align:center;">
                         <img src="<?php echo $img; ?>" style="height:150px; object-fit:contain; margin-top:15px;">
