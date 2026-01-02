@@ -6,10 +6,10 @@ include "koneksi.php";
 $q_info = mysqli_query($koneksi, "SELECT * FROM tbl_identitas LIMIT 1");
 $d_info = (mysqli_num_rows($q_info) > 0) ? mysqli_fetch_array($q_info) : ['nama_website'=>'Roti Nusantara', 'slogan'=>'Kelembutan Tradisi', 'alamat'=>'Alamat Default', 'logo'=>'logo roti1.jpg'];
 
-// --- 2. LOGIKA DATA KARYAWAN (Bukan Mahasiswa) ---
+// --- 2. LOGIKA DATA KARYAWAN
 // Ambil daftar karyawan dari tabel pegawai/karyawan (Sesuaikan nama tabelnya, misal: tbl_pegawai)
 // Jika kamu belum punya tabel tbl_pegawai, sistem akan tetap eror di sini.
-$karyawan_list_query = mysqli_query($koneksi, "SELECT nip, nama FROM tbl_pegawai ORDER BY nama ASC");
+$karyawan_list = $koneksi->query("SELECT nip, nama FROM karyawan ORDER BY nama ASC")->fetch_all(MYSQLI_ASSOC);
 $karyawan_list = ($karyawan_list_query) ? mysqli_fetch_all($karyawan_list_query, MYSQLI_ASSOC) : [];
 
 // Ambil NIP yang dipilih dari dropdown atau dari session login
