@@ -1,0 +1,222 @@
+/* --- GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- ANIMASI KEYFRAMES (PREMIUM) --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- RESET & GLOBAL --- */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+body { 
+    background-color: #fdf6e9; /* Cream lembut */
+    color: #444; 
+    line-height: 1.6;
+    display: flex; flex-direction: column; min-height: 100vh;
+}
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+
+/* --- CONTAINER UTAMA --- */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    animation: fadeIn 0.8s ease-out; /* Animasi Muncul */
+    flex: 1; /* Agar footer turun ke bawah */
+}
+
+/* --- HEADER (PREMIUM STYLE) --- */
+header {
+    background: linear-gradient(135deg, #FF8C42, #D84315);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+/* Hiasan Lingkaran Transparan */
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -10%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+header h1 { 
+    font-size: 2.5rem; letter-spacing: 1px; font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 5px;
+}
+header p { font-size: 1.1rem; opacity: 0.95; font-style: italic; }
+
+/* --- LAYOUT SYSTEM --- */
+.layout-row { display: flex; flex-wrap: wrap; height: 100%; }
+
+/* 1. LEFT SIDEBAR (NAV) */
+.left-sidebar {
+    background-color: #fff;
+    border-right: 1px solid #f0f0f0;
+    padding: 25px;
+    width: 25%;
+    animation: slideInLeft 1s ease-out;
+}
+.sidebar-title {
+    font-size: 1rem; font-weight: 700; color: #D84315;
+    margin-bottom: 20px; padding-bottom: 10px;
+    border-bottom: 2px solid #FF8C42; text-transform: uppercase;
+}
+.menu-list li { margin-bottom: 10px; }
+.menu-list a {
+    display: block; padding: 12px 15px; background: #fff;
+    border-radius: 8px; color: #666; font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03); border-left: 4px solid transparent;
+}
+.menu-list a:hover {
+    background: #FFF3E0; color: #D84315;
+    border-left: 4px solid #D84315; transform: translateX(8px);
+}
+
+/* 2. MAIN CONTENT (ARTIKEL) */
+.main-content { background-color: #fff; padding: 30px; width: 50%; }
+
+/* Card Style Artikel */
+.article-card {
+    background: white; border-radius: 15px; overflow: hidden;
+    margin-bottom: 30px; border: 1px solid #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.article-card:hover {
+    transform: translateY(-8px); box-shadow: 0 15px 30px rgba(216, 67, 21, 0.15);
+    border-color: #FFCCBC;
+}
+.card-img {
+    width: 100%; height: 220px; object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.article-card:hover .card-img { transform: scale(1.05); }
+.card-body { padding: 25px; }
+.card-date {
+    display: inline-block; background: #FFF3E0; color: #D84315;
+    padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 12px;
+}
+.card-title { font-size: 1.5rem; margin-bottom: 10px; color: #2c3e50; line-height: 1.3; }
+.btn-read {
+    display: inline-block; padding: 10px 24px;
+    background: linear-gradient(to right, #FF8C42, #D84315);
+    color: white; border-radius: 30px; font-weight: 500; font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(216, 67, 21, 0.3); margin-top: 15px;
+}
+.btn-read:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(216, 67, 21, 0.4); }
+
+/* 3. RIGHT SIDEBAR (ASIDE - RAPI) */
+.right-sidebar {
+    background-color: #fff; border-left: 1px solid #f0f0f0;
+    padding: 25px; width: 25%;
+}
+.category-list li { margin-bottom: 8px; }
+.category-list li a {
+    display: block; padding: 10px 0; border-bottom: 1px dashed #eee;
+    color: #666; position: relative; padding-left: 25px;
+}
+.category-list li a::before {
+    content: '📂'; position: absolute; left: 0; transition: transform 0.3s ease;
+}
+.category-list li a:hover { color: #D84315; padding-left: 30px; }
+.category-list li a:hover::before { transform: rotate(15deg); }
+
+/* --- FOOTER --- */
+footer {
+    background: #263238; color: #eceff1; text-align: center;
+    padding: 40px 20px; margin-top: auto; border-top: 5px solid #FF8C42;
+}
+
+/* --- ADMIN STYLES (DIPERBAIKI & DIGABUNG) --- */
+.admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.form-card {
+    background: #fdfdfd; padding: 25px; border-radius: 10px;
+    border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 30px;
+}
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #555; }
+.input-field {
+    width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;
+    font-size: 1rem; transition: 0.3s;
+}
+.input-field:focus { border-color: #FF8C42; outline: none; box-shadow: 0 0 5px rgba(255, 140, 66, 0.3); }
+
+/* Tabel Admin Modern */
+.table-responsive { overflow-x: auto; }
+.table-crud {
+    width: 100%; border-collapse: collapse; background: white;
+    border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.table-crud thead { background: #37474F; color: white; }
+.table-crud th, .table-crud td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+.table-crud tbody tr:hover { background-color: #FFF3E0; }
+
+/* Tombol Admin */
+.btn { padding: 8px 16px; border-radius: 5px; border: none; cursor: pointer; font-weight: 600; }
+.btn-primary { background: #2E7D32; color: white; }
+.btn-warning { background: #FF8F00; color: white; }
+.btn-danger { background: #C62828; color: white; }
+.btn-secondary { background: #78909C; color: white; }
+
+/* --- RESPONSIVE LOGIC --- */
+@media screen and (min-width: 992px) {
+    .left-sidebar { width: 25%; order: 1; }
+    .main-content { width: 50%; order: 2; }
+    .right-sidebar { width: 25%; order: 3; }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .left-sidebar { width: 30%; order: 1; border-right: none; }
+    .main-content { width: 70%; order: 2; }
+    .right-sidebar { 
+        width: 100%; order: 3; border-left: none; border-top: 2px solid #FF8C42; 
+        display: flex; gap: 20px; background: #FFF3E0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .container { margin: 0; box-shadow: none; }
+    .left-sidebar { width: 100%; order: 1; border-right: none; border-bottom: 1px solid #eee; }
+    .main-content { width: 100%; order: 2; padding: 20px; }
+    .right-sidebar { width: 100%; order: 3; border-left: none; border-top: 1px solid #eee; }
+}
+
+/* --- FITUR TABEL SCROLL (Scroll Down) --- */
+.table-scroll {
+    max-height: 300px; /* Batas tinggi tabel */
+    overflow-y: auto;  /* Munculkan scrollbar jika data banyak */
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.table-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-scroll th {
+    position: sticky; /* Header nempel di atas */
+    top: 0;
+    background: #37474F; /* Warna Header Gelap */
+    color: white;
+    z-index: 2;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+}
+
+/* Mempercantik Scrollbar */
+.table-scroll::-webkit-scrollbar { width: 8px; }
+.table-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+.table-scroll::-webkit-scrollbar-thumb { background: #FF8C42; border-radius: 4px; }
+.table-scroll::-webkit-scrollbar-thumb:hover { background: #D84315; }
